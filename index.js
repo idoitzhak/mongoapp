@@ -16,11 +16,11 @@ app.use('/api',actions);
 mongoose.connect(mongo_url)
 .then(results => {
     console.log(results);
+    app.listen(port,function(){
+        console.log(`Server is running via port ${port}`);
+    })
 })
 .catch(error => {
     console.log(error);
 })
 
-app.listen(port,function(){
-    console.log(`Server is running via port ${port}`);
-})
